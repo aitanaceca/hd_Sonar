@@ -1,11 +1,11 @@
 module.exports = {
   development: {
-    username: 'root',
-    password: 'admin1234',
-    database: 'hay_day',
-    host: '127.0.0.1',
-    port: 3306,
-    dialect: 'mysql',
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_DATABASE,
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
+    dialect: process.env.DATABASE_DIALECT,
     pool: {
       max: 10,
       min: 0,

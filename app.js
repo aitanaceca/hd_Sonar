@@ -1,7 +1,4 @@
-const express = require('express');
 const fs = require('fs');
-const readline = require('readline');
-const app = express();
 
 const database = require('./database');
 const ProductService = require('./services/productService');

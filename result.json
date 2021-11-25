@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "id": 18,
+            "name": "gratinado de bacon",
+            "cant": 1
+        },
+        {
+            "id": 24,
+            "name": "helado de fresa",
+            "cant": 1
+        },
+        {
+            "id": 26,
+            "name": "huevo",
+            "cant": 2
+        },
+        {
+            "id": 27,
+            "name": "huevos con bacon",
+            "cant": 1
+        },
+        {
+            "id": 33,
+            "name": "leche de cabra",
+            "cant": 2
+        },
+        {
+            "id": 61,
+            "name": "patata asada",
+            "cant": 1
+        },
+        {
+            "id": 68,
+            "name": "queso de cabra",
+            "cant": 2
+        }
+    ]
+}

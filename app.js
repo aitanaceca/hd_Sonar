@@ -15,16 +15,18 @@ async function databaseClose() {
 }
 
 function emptyFile() {
-  fs.writeFile('result.json', '{"data": []}', function(){})
+  fs.writeFile('result.json', '{"data": []}', function(){
+    console.log('Archivo vaciado');
+  })
 }
 
 function writeFich(result) {
   let obj = {
     data: []
   };
-  fs.readFile('result.json', 'utf8', function readFileCallback(err, data){
+  fs.readFile('result.json', 'utf8', function readFileCallback(error, data){
     if (err){
-        console.log(err);
+        console.log(error);
     } else {
     obj = JSON.parse(data);
     result.forEach(elem => {
@@ -36,8 +38,8 @@ function writeFich(result) {
         });
       }
     })
-    json = JSON.stringify(obj, null, 4);
-    fs.writeFile('result.json', json, 'utf8', function (err, result) {
+    let json = JSON.stringify(obj, null, 4);
+    fs.writeFile('result.json', json, 'utf8', function (err) {
       if (err) {
         console.log(err);
       }
@@ -59,7 +61,7 @@ async function modifyCant(name, newCant) {
     let product = await ProductService.findProductByName(name);
     await ProductService.updateProductByName(product, name, newCant);
     await ProductService.saveProduct(product);
-    product = await ProductService.findProductByName(name);
+    await ProductService.findProductByName(name);
     let result = await ProductService.findAllProducts();
     emptyFile();
     writeFich(result);

@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
   product.associate = function (models) {
+    // Model association
   };
 
   return product;
